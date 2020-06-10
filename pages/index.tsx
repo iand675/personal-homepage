@@ -53,8 +53,7 @@ export default function Home() {
             {recentPosts.map((p) => <PostPreview key={p.slug} post={p} />)}        
             {(articles.length || recentPosts.length) && 
               <i>
-                Older articles available{' '}
-                <Link href="articles"><a>here</a></Link>
+                <Link href="articles"><a>Older articles available here</a></Link>
               </i>
             }
           </div>
