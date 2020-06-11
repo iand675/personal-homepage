@@ -49,9 +49,9 @@ export default function Articles() {
       </div>
       <div className="row-span-1 col-span-2">
         <h1 className="leading-tight mt-8 mb-4">
-          <span className="text-6xl text-gray-900">Articles</span>
+          <span className="text-6xl text-gray-100">Articles</span>
           <br />
-          <small className="text-2xl text-gray-700">Get articles in your inbox on occasion.</small>
+          <small className="text-2xl text-gray-500">Get articles in your inbox on occasion.</small>
         </h1>
         <form className="flex items-center justify-between mb-4">
           <div>
