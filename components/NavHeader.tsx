@@ -30,7 +30,7 @@ const NavHeader: FC<NavHeaderProps> = function NavHeader({className}) {
       <Link href="/" passHref>
         <A className={`${linkClasses} text-pink-300 ml-${spacing}`}>Home</A>
       </Link>
-      <Link href="/articles" passHref>
+      <Link href="/posts" passHref>
         <A className={`${linkClasses} text-purple-300`}>Articles</A>
       </Link>
       <Link href="/newsletter" passHref>

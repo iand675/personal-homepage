@@ -1,11 +1,16 @@
+import Link from 'next/link'
 import NavHeader from '../../components/NavHeader'
 
 export const articles = [
-  {title: 'MDX!', slug: 'mdx', blurb: 'I think mdx is kinda neat', tag: 'draft'}
+  {title: 'MDX!', slug: 'mdx', blurb: 'I think mdx is kinda neat', tag: 'draft'},
+  {title: 'Using React with GHCJS – Part 1', slug: '2014-12-16-react-js-with-ghcjs', blurb: 'React with GHCJS', tag: 'haskell'},
+  {title: 'Introducing Growler, a simple HTTP server toolkit', slug: '2014-11-13-introducing-growler', blurb: 'Growler', tag: 'haskell'},
 ]
 
 const tagTypes = {
-  draft: { fg: 'text-indigo-100', bg: 'bg-indigo-500', text: 'Draft' }
+  draft: { fg: 'text-indigo-100', bg: 'bg-indigo-500', text: 'Draft' },
+  frontend: { fg: 'text-blue-100', bg: 'bg-blue-500', text: 'Frontend' },
+  haskell: { fg: 'text-green-100', bg: 'bg-green-500', text: 'Haskell' },
 }
 
 export function Tag({type}) {
@@ -17,17 +22,22 @@ export function Tag({type}) {
   )
 }
 
-export function ArticleCard({title, blurb, tag, person}) {
-  return (<div className="rounded bg-white shadow-md p-6">
-    <Tag type={tag} />
-    <article>
-      <h1>
-        {title}
-      </h1>
-      <div>
-        {blurb}
-      </div>
-    </article>
+export function ArticleCard({title, blurb, tag, slug, className}) {
+  return (
+  <div className={`rounded bg-white shadow-md p-6 text-gray-900 ${className}`}>
+    <Link href={`/posts/${slug}`}>
+      <a>
+        <Tag type={tag} />
+        <article>
+          <h1 className="text-2xl">
+            {title}
+          </h1>
+          <div>
+            {blurb}
+          </div>
+        </article>
+      </a>
+    </Link>
   </div>)
 }
 
@@ -61,7 +71,14 @@ export default function Articles() {
       </div>
       <div className="row-span-2 col-span-2">
         {articles.map((p) => 
-          <ArticleCard key={p.slug} title={p.title} blurb={p.blurb} tag={p.tag} />
+          <ArticleCard 
+            key={p.slug} 
+            title={p.title} 
+            blurb={p.blurb} 
+            tag={p.tag} 
+            slug={p.slug}
+            className="mb-4"
+          />
         )}
       </div>
     </div>

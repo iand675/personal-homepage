@@ -3,14 +3,14 @@ import Link from 'next/link'
 import NavHeader from '../components/NavHeader'
 import PostPreview from '../components/PostPreview'
 import { NextSeo } from 'next-seo'
-import { articles } from './articles'
+import { articles } from './posts'
 
 const maxPostsOnPage = 10
 const recentPosts = articles.slice(0, maxPostsOnPage)
 
 export default function Home() {
   return (
-    <>
+    <div className="container mx-auto">
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -22,7 +22,7 @@ export default function Home() {
         }}
       />
 
-      <div className="flex container mx-auto">
+      <div className="flex">
         <div className="w-2/5">
           <NavHeader />
           <main className="">
@@ -31,7 +31,7 @@ export default function Home() {
                 About
               </h1>
               <p>
-                I'm @iand675. I write code and enjoy life with my family. Data & Infrastructure Engineering Lead at Forge Global, previously at Betterteam & CircleCI.
+                I'm <a className="underline" href="https://twitter.com/iand675">@iand675</a>. I write code and enjoy life with my family. Data & Infrastructure Engineering Lead at Forge Global, previously at Betterteam & CircleCI.
               </p>
               <p>
                 I lived in Japan for a while, and now I'm in the Bay Area.
@@ -45,7 +45,7 @@ export default function Home() {
           </main>
 
           <div>
-            <Link href="articles">
+            <Link href="/posts">
               <a>
                 <h2 className="text-2xl">Recent Articles</h2>
               </a>
@@ -53,7 +53,7 @@ export default function Home() {
             {recentPosts.map((p) => <PostPreview key={p.slug} post={p} />)}        
             {(articles.length || recentPosts.length) && 
               <i>
-                <Link href="articles"><a>Older articles available here</a></Link>
+                <Link href="/posts"><a>Older articles available here</a></Link>
               </i>
             }
           </div>
@@ -63,6 +63,6 @@ export default function Home() {
       <footer>
         Noodle
       </footer>
-    </>
+    </div>
   )
 }

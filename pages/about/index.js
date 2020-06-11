@@ -1,4 +1,4 @@
-import { ArticleCard } from "../articles"
+import { ArticleCard } from "../posts"
 import AboutContents from "../../content/about.mdx"
 import NavHeader from '../../components/NavHeader'
 

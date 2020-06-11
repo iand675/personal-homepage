@@ -10,7 +10,7 @@ interface PostPreviewProps {
 export const PostPreview: FC<PostPreviewProps> = function PostPreview({post}) {
   return (
     <div>
-      <Link href="/articles/[slug]" as={`/articles/${post.slug}`}>
+      <Link href="/posts/[slug]" as={`/posts/${post.slug}`}>
         <a>{post.title}</a>
       </Link>
     </div>
