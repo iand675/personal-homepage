@@ -3,15 +3,20 @@ import { FC } from 'react'
 
 interface PostPreviewProps {
   post: {
-    slug: string,
+    __resourcePath: string,
     title: string
   }
 }
+
+function formatPath(p) {
+  return p.replace(/\.mdx$/, '')
+}
+
 export const PostPreview: FC<PostPreviewProps> = function PostPreview({post}) {
   return (
     <div>
-      <Link href="/posts/[slug]" as={`/posts/${post.slug}`}>
-        <a>{post.title}</a>
+      <Link href={formatPath(post.__resourcePath)}>
+        <a className="text-lg font-semibold">{post.title}</a>
       </Link>
     </div>
   )

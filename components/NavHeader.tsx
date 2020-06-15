@@ -4,6 +4,7 @@ import { forwardRef, FC, AnchorHTMLAttributes, MutableRefObject, ForwardRefRende
 
 // purgecss mr-6 ml-6
 const spacing = 6
+
 const linkClasses = `mr-${spacing} py-2 inline-block text-lg font-medium`
 
 interface LinkProps {
