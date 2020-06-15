@@ -1,6 +1,5 @@
-import { ArticleCard } from "../posts"
-import AboutContents from "../../content/about.mdx"
-import NavHeader from '../../components/NavHeader'
+import AboutContents from "content/about.mdx"
+import NavHeader from 'components/NavHeader'
 
 export default function About() {
   return (

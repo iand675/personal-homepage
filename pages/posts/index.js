@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import NavHeader from '../../components/NavHeader'
+import NavHeader from 'components/NavHeader'
 import {frontMatter as postPages} from './*.mdx'
 
 const tagTypes = {

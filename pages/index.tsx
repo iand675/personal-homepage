@@ -1,12 +1,14 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import NavHeader from '../components/NavHeader'
-import PostPreview from '../components/PostPreview'
+import NavHeader from 'components/NavHeader'
+import PostPreview from 'components/PostPreview'
 import { NextSeo } from 'next-seo'
 import {frontMatter as postPages} from './posts/*.mdx'
 
 const maxPostsOnPage = 10
 const recentPosts = postPages.slice(0, maxPostsOnPage)
+
+export const config = { amp: 'hybrid' }
 
 export default function Home() {
   return (
